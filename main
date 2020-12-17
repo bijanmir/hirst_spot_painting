@@ -1,0 +1,30 @@
+import turtle as t
+import random
+
+t.colormode(255)
+tim = t.Turtle()
+color_list = [(228, 227, 226), (246, 237, 243), (243, 244, 246), (234, 166, 59), (45, 112, 157), (113, 150, 203),
+              (212, 123, 164), (16, 128, 96), (172, 44, 88), (1, 177, 143), (153, 18, 54), (224, 201, 117),
+              (225, 76, 115), (163, 166, 35), (28, 35, 84), (227, 86, 43), (42, 166, 208), (120, 172, 116),
+              (119, 102, 158), (215, 64, 33), (237, 244, 241), (39, 52, 100), (76, 21, 45), (229, 169, 188),
+              (14, 99, 71), (31, 61, 56), (8, 92, 107), (222, 177, 169), (181, 188, 208), (171, 203, 193)]
+ 
+tim.penup()
+tim.hideturtle()
+tim.speed(0)
+vertical_space = 50
+tim.setposition(-250, -250)
+ 
+ 
+def make_line():
+    for _ in range(10):
+        tim.dot(20, random.choice(color_list))
+        tim.forward(50)
+ 
+ 
+for _ in range(10):
+    make_line()
+    tim.setposition(-250, tim.ycor() + vertical_space)
+ 
+screen = t.Screen()
+screen.exitonclick()
